@@ -56,7 +56,7 @@ export const LessonCreate = props => (
             <ReferenceInput source="teacher" reference="teachers">
                 <SelectInput optionText="name" />
             </ReferenceInput>
-            <ReferenceInput source="office" reference="offices">
+            <ReferenceInput source="office" reference="offices" perPage={10}>
                 <SelectInput optionText="office" />
             </ReferenceInput>
             <ReferenceInput source="group" reference="groups">
