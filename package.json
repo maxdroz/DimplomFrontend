@@ -9,10 +9,12 @@
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.4.1",
     "ra-language-russian": "^3.2.1",
+    "ra-ui-materialui": "^3.4.1",
     "react": "^16.13.1",
     "react-admin": "^3.4.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",

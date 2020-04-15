@@ -8,20 +8,21 @@ import { DisciplineList, DisciplineEdit, DisciplineCreate } from './discipline'
 import { TeacherList, TeacherEdit, TeacherCreate } from './teacher'
 import { GroupList, GroupEdit, GroupCreate } from './group'
 import { LessonList, LessonEdit, LessonCreate } from './lesson'
+import url from './url'
 // import Dashboard from './dashboard'
 
 ReferenceInput.defaultProps.perPage=1000000000
 
 const i18nProvider = polyglotI18nProvider(() => russianMessages, 'ru');
-const dataProvider = jsonServerProvider('http://192.168.0.25');
+const dataProvider = jsonServerProvider(url);
 
 const App = () => (
     <Admin i18nProvider={i18nProvider} dataProvider={dataProvider}>
-        <Resource name="lessons" list={LessonList} edit={LessonEdit} create={LessonCreate} />
-        <Resource name="offices" list={OfficeList} edit={OfficeEdit} create={OfficeCreate} />
-        <Resource name="disciplines" list={DisciplineList} edit={DisciplineEdit} create={DisciplineCreate} />
-        <Resource name="teachers" list={TeacherList} edit={TeacherEdit} create={TeacherCreate} />
-        <Resource name="groups" list={GroupList} edit={GroupEdit} create={GroupCreate} />
+        <Resource name="lessons" list={LessonList} edit={LessonEdit} create={LessonCreate} options={{ label: 'Пары' }} />
+        <Resource name="offices" list={OfficeList} edit={OfficeEdit} create={OfficeCreate} options={{ label: 'Аудитории' }} />
+        <Resource name="disciplines" list={DisciplineList} edit={DisciplineEdit} create={DisciplineCreate} options={{ label: 'Предметы' }} />
+        <Resource name="teachers" list={TeacherList} edit={TeacherEdit} create={TeacherCreate} options={{ label: 'Преподаватели' }} />
+        <Resource name="groups" list={GroupList} edit={GroupEdit} create={GroupCreate} options={{ label: 'Группы' }} />
     </Admin>
 );
 

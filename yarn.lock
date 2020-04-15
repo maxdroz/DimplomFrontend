@@ -8863,6 +8863,11 @@ ra-language-english@^3.4.1:
   dependencies:
     ra-core "^3.4.1"
 
+ra-language-russian@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/ra-language-russian/-/ra-language-russian-3.2.1.tgz#1609f0706a32cc77a27dc985831b80827f5e55de"
+  integrity sha512-TeGH2MvrrkbWPzmJlR7x8+WZ7OzbrC2Goqb9oVPqIE5/QyZqBHG65RoMcdWmVIe4LqiLut5O40Pz5VpR12W7Mw==
+
 ra-ui-materialui@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.4.1.tgz#72a08cfc3fade7bc244438ae96a31c33fb0b3fa0"
@@ -10685,6 +10690,11 @@ typescript-tuple@^2.2.1:
   integrity sha512-Zcr0lbt8z5ZdEzERHAMAniTiIKerFCMgd7yjq1fPnDJ43et/k9twIFQMUYff9k5oXcsQ0WpvFcgzK2ZKASoW6Q==
   dependencies:
     typescript-compare "^0.0.2"
+
+typescript@^3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
+  integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 
 ua-parser-js@^0.7.18:
   version "0.7.21"
