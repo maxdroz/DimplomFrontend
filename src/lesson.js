@@ -1,5 +1,8 @@
 import React from 'react';
 import { List, Datagrid, TextField, DateField, ReferenceField, EditButton, Edit, SimpleForm, DateTimeInput, ReferenceInput, SelectInput, Create, Filter, required } from 'react-admin';
+import CTextField from './customTextField.tsx'
+
+const nameSurnamePatronymic = choice => `${choice.surname} ${choice.name} ${choice.patronymic}`
 
 const LessonFilter = (props) => (
     <Filter {...props}>
@@ -7,7 +10,7 @@ const LessonFilter = (props) => (
             <SelectInput optionText="name" />
         </ReferenceInput>
         <ReferenceInput label="Преподаватель" source="teacher" reference="teachers" allowEmpty>
-            <SelectInput optionText="name" />
+            <SelectInput optionText={nameSurnamePatronymic} />
         </ReferenceInput>
         <ReferenceInput label="Кабинет" source="office" reference="offices" allowEmpty>
             <SelectInput optionText="office" />
@@ -18,10 +21,11 @@ const LessonFilter = (props) => (
 export const LessonList = props => (
     <List filters={<LessonFilter />} {...props} title='Пары'>
         <Datagrid>
+            <TextField source="id" label="Номер" />
             <DateField source="startTime" showTime label="Время начала" options={{hour12:false}} />
             <DateField source="endTime" showTime label="Время конца" options={{hour12:false}} />
             <ReferenceField source="teacher" reference="teachers" label="Преподаватель" >
-                <TextField source="name" />
+                <CTextField source="name" />
             </ReferenceField>
             <ReferenceField source="office" reference="offices" label="Кабинет" >
                 <TextField source="office" />
@@ -43,10 +47,10 @@ export const LessonEdit = props => (
             <DateTimeInput source="startTime" label="Время начала" validate={[required()]} />
             <DateTimeInput source="endTime" label="Время конца" validate={[required()]} />
             <ReferenceInput source="teacher" reference="teachers" label="Преподаватель" validate={[required()]} >
-                <SelectInput optionText="name" />
+                <SelectInput optionText={nameSurnamePatronymic} />
             </ReferenceInput>
             <ReferenceInput source="office" reference="offices" label="Кабинет" validate={[required()]} >
-                <SelectInput optionText="office" />
+                <SelectInput optionText="office"/>
             </ReferenceInput>
             <ReferenceInput source="group" reference="groups" label="Группа" validate={[required()]} >
                 <SelectInput optionText="name" />
@@ -64,7 +68,7 @@ export const LessonCreate = props => (
             <DateTimeInput source="startTime" label="Время начала" validate={[required()]} />
             <DateTimeInput source="endTime" label="Время конца" validate={[required()]} />
             <ReferenceInput source="teacher" reference="teachers" label="Преподаватель" validate={[required()]} >
-                <SelectInput optionText="name" />
+                <SelectInput optionText={nameSurnamePatronymic} />
             </ReferenceInput>
             <ReferenceInput source="office" reference="offices" label="Кабинет" validate={[required()]} >
                 <SelectInput optionText="office" />
