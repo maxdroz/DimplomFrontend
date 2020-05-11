@@ -22,6 +22,7 @@ export const DisciplineList = props => (
 export const DisciplineEdit = props => (
     <Edit {...props} title={'Редактирование предмета #' + props.id}>
         <SimpleForm toolbar={<CustomBottomToolbar {...props} />}>
+            <TextInput disabled source="id" />
             <TextInput source="name" label="Название предмета" validate={[required()]} />
         </SimpleForm>
     </Edit>

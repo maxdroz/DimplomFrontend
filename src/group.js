@@ -22,6 +22,7 @@ export const GroupList = props => (
 export const GroupEdit = props => (
     <Edit {...props} title={'Редактирование группы #' + props.id}>
         <SimpleForm toolbar={<CustomBottomToolbar {...props} />}>
+            <TextInput disabled source="id" />
             <TextInput source="name" label="Номер группы" validate={[required()]} />
         </SimpleForm>
     </Edit>

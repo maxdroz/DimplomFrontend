@@ -22,6 +22,7 @@ export const OfficeList = props => (
 export const OfficeEdit = props => (
     <Edit {...props} title={'Редактирование аудитории #' + props.id}>
         <SimpleForm toolbar={<CustomBottomToolbar {...props} />}>
+            <TextInput disabled source="id" />
             <TextInput source="office" label="Аудитория" validate={[required()]} />
         </SimpleForm>
     </Edit>

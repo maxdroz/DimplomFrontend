@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, DateField, ReferenceField, EditButton, Edit, SimpleForm, DateTimeInput, ReferenceInput, SelectInput, Create, Filter, required } from 'react-admin';
+import { List, Datagrid, TextField, DateField, ReferenceField, EditButton, Edit, SimpleForm, DateTimeInput, ReferenceInput, SelectInput, Create, Filter, required, TextInput } from 'react-admin';
 import CTextField from './customTextField.tsx'
 
 const nameSurnamePatronymic = choice => `${choice.surname} ${choice.name} ${choice.patronymic}`
@@ -44,6 +44,7 @@ export const LessonList = props => (
 export const LessonEdit = props => (
     <Edit {...props} title={'Редактирование пары #' + props.id}>
         <SimpleForm>
+            <TextInput disabled source="id" />
             <DateTimeInput source="startTime" label="Время начала" validate={[required()]} />
             <DateTimeInput source="endTime" label="Время конца" validate={[required()]} />
             <ReferenceInput source="teacher" reference="teachers" label="Преподаватель" validate={[required()]} >

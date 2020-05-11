@@ -26,6 +26,7 @@ export const TeacherList = props => (
 export const TeacherEdit = props => (
     <Edit {...props} title={'Редактирование преподавателя #' + props.id}>
         <SimpleForm toolbar={<CustomBottomToolbar {...props} />}>
+            <TextInput disabled source="id" />
             <TextInput source="surname" label="Фамилия" validate={[required()]} />
             <TextInput source="name" label="Имя" validate={[required()]} />
             <TextInput source="patronymic" label="Отчество" validate={[required()]} />
