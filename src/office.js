@@ -2,6 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Create, Filter, required } from 'react-admin';
 import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
+import Empty from './empty'
 
 const OfficeFilter = (props) => (
     <Filter {...props}>
@@ -10,7 +11,7 @@ const OfficeFilter = (props) => (
 );
 
 export const OfficeList = props => (
-    <List filters={<OfficeFilter />} {...props} title='Аудитории' bulkActionButtons={<CustomDeleteToolbar />}>
+    <List empty={<Empty displayName="Аудиторий" />} filters={<OfficeFilter />} {...props} title='Аудитории' bulkActionButtons={<CustomDeleteToolbar />}>
         <Datagrid>
             <TextField source="id" label="Номер" />
             <TextField source="office" label="Аудитория" />
