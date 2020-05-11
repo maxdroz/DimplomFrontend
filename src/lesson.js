@@ -13,7 +13,7 @@ const LessonFilter = (props) => (
         <ReferenceInput label="Преподаватель" source="teacher" reference="teachers" allowEmpty>
             <SelectInput optionText={nameSurnamePatronymic} />
         </ReferenceInput>
-        <ReferenceInput label="Кабинет" source="office" reference="offices" allowEmpty>
+        <ReferenceInput label="Аудитория" source="office" reference="offices" allowEmpty>
             <SelectInput optionText="office" />
         </ReferenceInput>
     </Filter>
@@ -28,7 +28,7 @@ export const LessonList = props => (
             <ReferenceField source="teacher" reference="teachers" label="Преподаватель" >
                 <CTextField source="name" />
             </ReferenceField>
-            <ReferenceField source="office" reference="offices" label="Кабинет" >
+            <ReferenceField source="office" reference="offices" label="Аудитория" >
                 <TextField source="office" />
             </ReferenceField>
             <ReferenceField source="group" reference="groups" label="Группа" >
@@ -51,7 +51,7 @@ export const LessonEdit = props => (
             <ReferenceInput source="teacher" reference="teachers" label="Преподаватель" validate={[required()]} >
                 <SelectInput optionText={nameSurnamePatronymic} />
             </ReferenceInput>
-            <ReferenceInput source="office" reference="offices" label="Кабинет" validate={[required()]} >
+            <ReferenceInput source="office" reference="offices" label="Аудитория" validate={[required()]} >
                 <SelectInput optionText="office"/>
             </ReferenceInput>
             <ReferenceInput source="group" reference="groups" label="Группа" validate={[required()]} >
@@ -72,7 +72,7 @@ export const LessonCreate = props => (
             <ReferenceInput source="teacher" reference="teachers" label="Преподаватель" validate={[required()]} >
                 <SelectInput optionText={nameSurnamePatronymic} />
             </ReferenceInput>
-            <ReferenceInput source="office" reference="offices" label="Кабинет" validate={[required()]} >
+            <ReferenceInput source="office" reference="offices" label="Аудитория" validate={[required()]} >
                 <SelectInput optionText="office" />
             </ReferenceInput>
             <ReferenceInput source="group" reference="groups" label="Группа" validate={[required()]} >

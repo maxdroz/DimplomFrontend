@@ -18,7 +18,7 @@ export const TeacherList = props => (
             <TextField source="name" label="Имя" />
             <TextField source="patronymic" label="Отчество" />
             <TextField source="phoneNumber" label="Номер телефона" />
-            <TextField source="description" label="Краткая информация" />
+            <TextField source="description" label="Краткая информация"  />
             <EditButton />
         </Datagrid>
     </List>
