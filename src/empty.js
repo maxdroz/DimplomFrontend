@@ -1,8 +1,8 @@
 import React from 'react';
-import Inbox from '@material-ui/icons/Inbox';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import { CreateButton } from 'react-admin';
+import { SvgIcon } from '@material-ui/core';
 
 const useStyles = makeStyles(
     theme => ({
@@ -28,13 +28,13 @@ const useStyles = makeStyles(
 );
 
 const Empty = props => {
-    const { basePath, displayName } = props;
+    const { basePath, displayName, icon } = props;
     const classes = useStyles(props);
 
     return (
         <>
             <div className={classes.message}>
-                <Inbox className={classes.icon} />
+            <SvgIcon component={icon}  className={classes.icon} />
                 <Typography variant="h4" paragraph>
                     {`${displayName} нет.`}
                 </Typography>

@@ -2,6 +2,7 @@ import React from 'react';
 import { List, Datagrid, TextField, DateField, ReferenceField, EditButton, Edit, SimpleForm, DateTimeInput, ReferenceInput, SelectInput, Create, Filter, required, TextInput } from 'react-admin';
 import CTextField from './customTextField.tsx'
 import Empty from './empty'
+import DateRangeRoundedIcon from '@material-ui/icons/DateRangeRounded';
 
 const nameSurnamePatronymic = choice => `${choice.surname} ${choice.name} ${choice.patronymic}`
 
@@ -20,7 +21,7 @@ const LessonFilter = (props) => (
 );
 
 export const LessonList = props => (
-    <List empty={<Empty displayName="Пар" />} filters={<LessonFilter />} {...props} title='Пары'>
+    <List empty={<Empty displayName="Пар" icon={DateRangeRoundedIcon}/>} filters={<LessonFilter />} {...props} title='Пары'>
         <Datagrid>
             <TextField source="id" label="Номер" />
             <DateField source="startTime" showTime label="Время начала" options={{hour12:false}} />

@@ -3,6 +3,7 @@ import { List, Datagrid, TextField, EditButton, Edit, SimpleForm, TextInput, Cre
 import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
+import PersonIcon from '@material-ui/icons/Person';
 
 const TeacherFilter = (props) => (
     <Filter {...props}>
@@ -11,7 +12,7 @@ const TeacherFilter = (props) => (
 );
 
 export const TeacherList = props => (
-    <List empty={<Empty displayName="Преподавателей" />} filters={< TeacherFilter />} {...props} title='Преподаватели' bulkActionButtons={<CustomDeleteToolbar />}>
+    <List empty={<Empty displayName="Преподавателей" icon={PersonIcon}/>} filters={< TeacherFilter />} {...props} title='Преподаватели' bulkActionButtons={<CustomDeleteToolbar />}>
         <Datagrid>
             <TextField source="id" label="Номер" />
             <TextField source="surname" label="Фамилия" />

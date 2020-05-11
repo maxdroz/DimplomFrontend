@@ -3,6 +3,7 @@ import { List, Datagrid, TextField, EditButton, Edit, SimpleForm, Create, Filter
 import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
+import GroupIcon from '@material-ui/icons/Group';
 
 const GroupFilter = (props) => (
     <Filter {...props}>
@@ -11,7 +12,7 @@ const GroupFilter = (props) => (
 );
 
 export const GroupList = props => (
-    <List empty={<Empty displayName="Групп" />} filters={<GroupFilter />} {...props} title='Группы' bulkActionButtons={<CustomDeleteToolbar />}>
+    <List empty={<Empty displayName="Групп" icon={GroupIcon}/>} filters={<GroupFilter />} {...props} title='Группы' bulkActionButtons={<CustomDeleteToolbar />}>
         <Datagrid>
             <TextField source="id" label="Номер" />
             <TextField source="name" label="Номер группы" />
