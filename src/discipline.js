@@ -5,6 +5,9 @@ import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
 import BookIcon from '@material-ui/icons/Book';
 
+const maxLength = (max, message = 'Слишком длинное название предмета. Используйте сокращенную форму') =>
+    value => value && value.length > max ? message : undefined;
+
 const DisciplineFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Посик" source="q" alwaysOn />
@@ -16,6 +19,7 @@ export const DisciplineList = props => (
         <Datagrid>
             <TextField source="id" label="Номер"/>
             <TextField source="name" label="Название предмета" />
+            <TextField source="shortName" label="Краткое название предмета" />
             <EditButton />
         </Datagrid>
     </List>
@@ -26,6 +30,7 @@ export const DisciplineEdit = props => (
         <SimpleForm toolbar={<CustomBottomToolbar {...props} />}>
             <TextInput disabled source="id" />
             <TextInput source="name" label="Название предмета" validate={[required()]} />
+            <TextInput source="shortName" label="Краткое название предмета" validate={[required(), maxLength(10)]}/>
         </SimpleForm>
     </Edit>
 );
@@ -34,6 +39,7 @@ export const DisciplineCreate = props => (
     <Create {...props} title='Создание предмета'>
         <SimpleForm>
             <TextInput source="name" label="Название предмета" validate={[required()]} />
+            <TextInput source="shortName" label="Краткое название предмета" validate={[required(), maxLength(10)]}/>
         </SimpleForm>
     </Create>
 );

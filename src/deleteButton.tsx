@@ -84,7 +84,13 @@ const CustomBulkDeleteWithUndoButton: FC<CustomBulkDeleteWithUndoButtonProps> = 
                     onClick(e);
                 }
             } else {
-                dispath(showNotification('У данных записей есть связи, сначала удалите их', 'warning'))
+                let text
+                if(props.selectedIds.length === 1) {
+                    text = 'У данной записи есть связи, сначала удалите их'
+                } else {
+                    text = 'У данных записей есть связи, сначала удалите их'
+                }
+                dispath(showNotification(text, 'warning'))
             }
         })
     };
