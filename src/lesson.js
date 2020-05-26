@@ -17,6 +17,9 @@ const LessonFilter = (props) => (
         <ReferenceInput label="Аудитория" source="office" reference="offices" allowEmpty>
             <SelectInput optionText="office" />
         </ReferenceInput>
+        <ReferenceInput label="Предмет" source="discipline" reference="disciplines" allowEmpty>
+            <SelectInput optionText="name" />
+        </ReferenceInput>
     </Filter>
 );
 

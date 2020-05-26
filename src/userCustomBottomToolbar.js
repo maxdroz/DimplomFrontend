@@ -1,6 +1,6 @@
 import React from 'react';
 import { SaveButton, Toolbar } from 'react-admin';
-import DeleteWithUndoButton from './deleteButtonEdit.tsx'
+import UserDeleteWithUndoButton from './userDeleteButtonEdit.tsx'
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -10,13 +10,13 @@ const useStyles = makeStyles({
     },
 });
 
-export const CustomBottomToolbar = props => (
+export const UserCustomBottomToolbar = props => (
     <Toolbar {...props} classes={useStyles()}>
         <SaveButton
             label="СОХРАНИТЬ"
             redirect={false}
             submitOnEnter={true}
         />
-        <DeleteWithUndoButton selectedIds={[props.id]}/>
+        <UserDeleteWithUndoButton selectedIds={[props.id]}/>
     </Toolbar>
 );

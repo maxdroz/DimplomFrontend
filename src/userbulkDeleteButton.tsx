@@ -33,7 +33,7 @@ const useStyles = makeStyles(
     { name: 'RaBulkDeleteWithUndoButton' }
 );
 
-const CustomBulkDeleteWithUndoButton: FC<CustomBulkDeleteWithUndoButtonProps> = props => {
+const UserBulkDeleteWithUndoButton: FC<UserBulkDeleteWithUndoButtonProps> = props => {
     const {
         basePath,
         classes: classesOverride,
@@ -72,30 +72,12 @@ const CustomBulkDeleteWithUndoButton: FC<CustomBulkDeleteWithUndoButtonProps> = 
     });
 
     const handleClick = (e: any) => {
-        const token = localStorage.getItem('token');
-        fetchUtils.fetchJson(url + props.basePath + '/check', {
-            method: "POST",
-            body: JSON.stringify(
-                props.selectedIds
-            ),
-            //@ts-ignore
-            headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': token }),
-        }).then((a: any) => {
-            if(a.json.result === "success") {        
-                deleteMany();
-                if (typeof onClick === 'function') {
-                    onClick(e);
-                }
-            } else {
-                let text
-                if(props.selectedIds.length === 1) {
-                    text = 'У данной записи есть связи, сначала удалите их'
-                } else {
-                    text = 'У данных записей есть связи, сначала удалите их'
-                }
-                dispath(showNotification(text, 'warning'))
-            }
-        })
+        const username = localStorage.getItem('username');
+        if(props.selectedIds.includes(username)){
+            dispath(showNotification("Вы не можете удалить самого себя!!!", 'warning'))
+        } else {
+            deleteMany();
+        }
     };
 
     return (
@@ -117,7 +99,7 @@ const sanitizeRestProps = ({
     filterValues,
     label,
     ...rest
-}: Omit<CustomBulkDeleteWithUndoButtonProps, 'resource' | 'selectedIds' | 'icon'>) =>
+}: Omit<UserBulkDeleteWithUndoButtonProps, 'resource' | 'selectedIds' | 'icon'>) =>
     rest;
 
 interface Props {
@@ -128,9 +110,9 @@ interface Props {
     selectedIds: Identifier[];
 }
 
-export type CustomBulkDeleteWithUndoButtonProps = Props & ButtonProps;
+export type UserBulkDeleteWithUndoButtonProps = Props & ButtonProps;
 
-CustomBulkDeleteWithUndoButton.propTypes = {
+UserBulkDeleteWithUndoButton.propTypes = {
     basePath: PropTypes.string,
     classes: PropTypes.object,
     label: PropTypes.string,
@@ -139,9 +121,9 @@ CustomBulkDeleteWithUndoButton.propTypes = {
     icon: PropTypes.element,
 };
 
-CustomBulkDeleteWithUndoButton.defaultProps = {
+UserBulkDeleteWithUndoButton.defaultProps = {
     label: 'ra.action.delete',
     icon: <ActionDelete />,
 };
 
-export default CustomBulkDeleteWithUndoButton;
+export default UserBulkDeleteWithUndoButton;

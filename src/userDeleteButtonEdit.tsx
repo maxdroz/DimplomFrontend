@@ -20,7 +20,7 @@ import url from './url';
 //@ts-ignore
 import { useDispatch } from 'react-redux'
 
-const DeleteWithUndoButton: FC<DeleteWithUndoButtonProps> = props => {
+const UserDeleteWithUndoButton: FC<UserDeleteWithUndoButtonProps> = props => {
     const {
         label = 'ra.action.delete',
         classes: classesOverride,
@@ -66,28 +66,12 @@ const DeleteWithUndoButton: FC<DeleteWithUndoButtonProps> = props => {
         [deleteOne, onClick]
     );
     const handleDelete = (e: any) => {
-        const token = localStorage.getItem('token');
-        fetchUtils.fetchJson(url + props.basePath + '/check', {
-            method: "POST",
-            body: JSON.stringify(
-                props.selectedIds
-            ),
-            //@ts-ignore
-            headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': token }),
-        }).then((a: any) => {
-            if(a.json.result === "success") {        
-                b(e)
-            } else {
-                let text
-                if(props.selectedIds.length === 1) {
-                    text = 'У данной записи есть связи, сначала удалите их'
-                } else {
-                    text = 'У данных записей есть связи, сначала удалите их'
-                }
-                dispath(showNotification(text, 'warning'))
-            }
-        })
-
+        const username = localStorage.getItem('username');
+        if(props.selectedIds.includes(username)){
+            dispath(showNotification("Вы не можете удалить самого себя!!!", 'warning'))
+        } else {
+            b(e);
+        }
     }
 
     return (
@@ -146,9 +130,9 @@ interface Props {
 
 const defaultIcon = <ActionDelete />;
 
-export type DeleteWithUndoButtonProps = Props & ButtonProps;
+export type UserDeleteWithUndoButtonProps = Props & ButtonProps;
 
-DeleteWithUndoButton.propTypes = {
+UserDeleteWithUndoButton.propTypes = {
     basePath: PropTypes.string,
     classes: PropTypes.object,
     className: PropTypes.string,
@@ -163,4 +147,4 @@ DeleteWithUndoButton.propTypes = {
     icon: PropTypes.element,
 };
 
-export default DeleteWithUndoButton;
+export default UserDeleteWithUndoButton;
