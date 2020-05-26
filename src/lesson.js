@@ -9,6 +9,7 @@ const nameSurnamePatronymic = choice => `${choice.surname} ${choice.name} ${choi
 
 const LessonFilter = (props) => (
     <Filter {...props}>
+        <TextInput label="Поиск по id" source="q" alwaysOn />
         <ReferenceInput label="Группа" source="group" reference="groups" allowEmpty>
             <SelectInput optionText="name" />
         </ReferenceInput>
