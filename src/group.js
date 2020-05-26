@@ -4,6 +4,8 @@ import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
 import GroupIcon from '@material-ui/icons/Group';
+import { CreateNoRedirectBottomToolbar } from './createNoRedirectBottomToolbar'
+
 
 const GroupFilter = (props) => (
     <Filter {...props}>
@@ -32,7 +34,7 @@ export const GroupEdit = props => (
 
 export const GroupCreate = props => (
     <Create {...props} title='Создание группы'>
-        <SimpleForm>
+        <SimpleForm toolbar={<CreateNoRedirectBottomToolbar {...props} />} >
             <TextInput source="name" label="Номер группы" validate={[required()]} />
         </SimpleForm>
     </Create>

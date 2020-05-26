@@ -4,6 +4,7 @@ import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import { CreateNoRedirectBottomToolbar } from './createNoRedirectBottomToolbar'
 
 const OfficeFilter = (props) => (
     <Filter {...props}>
@@ -32,7 +33,7 @@ export const OfficeEdit = props => (
 
 export const OfficeCreate = props => (
     <Create {...props} title='Создание аудитории'>
-        <SimpleForm>
+        <SimpleForm toolbar={<CreateNoRedirectBottomToolbar {...props} />} >
             <TextInput source="office" label="Аудитория" validate={[required()]} />
         </SimpleForm>
     </Create>

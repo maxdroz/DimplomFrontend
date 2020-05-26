@@ -3,6 +3,7 @@ import { List, Datagrid, TextField, DateField, ReferenceField, EditButton, Edit,
 import CTextField from './customTextField.tsx'
 import Empty from './empty'
 import DateRangeRoundedIcon from '@material-ui/icons/DateRangeRounded';
+import { CreateNoRedirectBottomToolbar } from './createNoRedirectBottomToolbar'
 
 const nameSurnamePatronymic = choice => `${choice.surname} ${choice.name} ${choice.patronymic}`
 
@@ -27,8 +28,8 @@ export const LessonList = props => (
     <List empty={<Empty displayName="Пар" icon={DateRangeRoundedIcon}/>} filters={<LessonFilter />} {...props} title='Пары'>
         <Datagrid>
             <TextField source="id" label="Номер" />
-            <DateField source="startTime" showTime label="Время начала" options={{hour12:false}} />
-            <DateField source="endTime" showTime label="Время конца" options={{hour12:false}} />
+            <DateField source="startTime" showTime label="Время начала"options={{hour12:false, day:'numeric',month:'numeric',year:'numeric',hour:'numeric',minute:'numeric'}}  />
+            <DateField source="endTime" showTime label="Время конца" options={{hour12:false, day:'numeric',month:'numeric',year:'numeric',hour:'numeric',minute:'numeric'}} />
             <ReferenceField source="teacher" reference="teachers" label="Преподаватель" >
                 <CTextField source="name" />
             </ReferenceField>
@@ -70,7 +71,7 @@ export const LessonEdit = props => (
 
 export const LessonCreate = props => (
     <Create {...props} title='Создание пары'>
-        <SimpleForm>
+        <SimpleForm toolbar={<CreateNoRedirectBottomToolbar {...props} />} >
             <DateTimeInput source="startTime" label="Время начала" validate={[required()]} />
             <DateTimeInput source="endTime" label="Время конца" validate={[required()]} />
             <ReferenceInput source="teacher" reference="teachers" label="Преподаватель" validate={[required()]} >

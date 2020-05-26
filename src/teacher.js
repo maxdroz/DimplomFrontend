@@ -4,6 +4,7 @@ import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
 import PersonIcon from '@material-ui/icons/Person';
+import { CreateNoRedirectBottomToolbar } from './createNoRedirectBottomToolbar'
 
 const TeacherFilter = (props) => (
     <Filter {...props}>
@@ -40,7 +41,7 @@ export const TeacherEdit = props => (
 
 export const TeacherCreate = props => (
     <Create {...props}  title='Создание преподавателя'>
-        <SimpleForm>
+        <SimpleForm toolbar={<CreateNoRedirectBottomToolbar {...props} />} >
             <TextInput source="surname" label="Фамилия" validate={[required()]} />
             <TextInput source="name" label="Имя" validate={[required()]} />
             <TextInput source="patronymic" label="Отчество" validate={[required()]} />

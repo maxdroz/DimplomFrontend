@@ -4,6 +4,7 @@ import { CustomDeleteToolbar } from './customDeleteToolbar'
 import { CustomBottomToolbar } from './customBottomToolbar'
 import Empty from './empty'
 import BookIcon from '@material-ui/icons/Book';
+import { CreateNoRedirectBottomToolbar } from './createNoRedirectBottomToolbar'
 
 const maxLength = (max, message = 'Слишком длинное название предмета. Используйте сокращенную форму') =>
     value => value && value.length > max ? message : undefined;
@@ -37,7 +38,7 @@ export const DisciplineEdit = props => (
 
 export const DisciplineCreate = props => (
     <Create {...props} title='Создание предмета'>
-        <SimpleForm>
+        <SimpleForm toolbar={<CreateNoRedirectBottomToolbar {...props} />} >
             <TextInput source="name" label="Название предмета" validate={[required()]} />
             <TextInput source="shortName" label="Краткое название предмета" validate={[required(), maxLength(10)]}/>
         </SimpleForm>
