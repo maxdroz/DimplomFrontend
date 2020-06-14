@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from 'react';
 //@ts-ignore
 import { useDispatch } from 'react-redux'
 //@ts-ignore
-import { Button, ButtonProps, showNotification, fetchUtils } from 'react-admin';
+import { Button, ButtonProps, showNotification } from 'react-admin';
 import PropTypes from 'prop-types';
 import ActionDelete from '@material-ui/icons/Delete';
 import { fade } from '@material-ui/core/styles/colorManipulator';
@@ -15,7 +15,6 @@ import {
     CRUD_DELETE_MANY,
     Identifier,
 } from 'ra-core';
-import url from './url';
 
 const useStyles = makeStyles(
     theme => ({

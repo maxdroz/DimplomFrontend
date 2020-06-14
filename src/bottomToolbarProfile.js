@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import { SaveButton, Toolbar, showNotification } from 'react-admin';
-import DeleteWithUndoButton from './deleteButtonEdit.tsx'
 import { makeStyles } from '@material-ui/core/styles';
 import url from './url'
 

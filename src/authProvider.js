@@ -9,7 +9,7 @@ const authProvider = {
         });
         return fetch(request)
             .then(response => {
-                if(response.status == 401) {
+                if(response.status === 401) {
                     throw new Error("Неверный логин или пароль");
                 } else if (response.status < 200 || response.status >= 300) {
                     throw new Error(response.statusText);

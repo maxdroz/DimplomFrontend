@@ -1,1 +1,1 @@
-export default 'http://192.168.0.25'
+export default 'https://schedule-web-server.herokuapp.com'

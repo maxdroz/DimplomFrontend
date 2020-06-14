@@ -6,7 +6,7 @@ import ActionDelete from '@material-ui/icons/Delete';
 //@ts-ignore
 import classnames from 'classnames';
 //@ts-ignore
-import { Button, ButtonProps, showNotification, fetchUtils } from 'react-admin';
+import { Button, ButtonProps, showNotification } from 'react-admin';
 import {
     useDelete,
     useRefresh,
@@ -16,7 +16,6 @@ import {
     Record,
     RedirectionSideEffect,
 } from 'ra-core';
-import url from './url';
 //@ts-ignore
 import { useDispatch } from 'react-redux'
 

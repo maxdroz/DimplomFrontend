@@ -19,14 +19,13 @@ import authProvider from './authProvider'
 import ProfileEdit from './profileEdit';
 import dataProvider from './dataProvider';
 import CustomLayout from './appbar'
-// import Dashboard from './dashboard'
+import Dashboard from './dashboard'
 
 ReferenceInput.defaultProps.perPage=1000000000
     
 const i18nProvider = polyglotI18nProvider(() => russianMessages, 'ru')
 
 const App = () => {
-    // const dispatch = useDispatch()
     return <Admin i18nProvider={i18nProvider} dataProvider={dataProvider()} authProvider={authProvider} customRoutes={[<Route key="my-profile" path="/my-profile" component={ProfileEdit}/>]} appLayout={CustomLayout}>
         { permissions => [
         <Resource name="lessons" list={LessonList} edit={LessonEdit} create={LessonCreate} options={{ label: 'Пары' }} icon={DateRangeRoundedIcon}/>,

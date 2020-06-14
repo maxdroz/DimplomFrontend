@@ -26,10 +26,15 @@ export const UserList = props => (
 export const UserEdit = props => (
     <Edit {...props} title={'Редактирование пользователя ' + props.id}>
         <SimpleForm toolbar={<UserCustomBottomToolbar {...props} />}>
-            <TextInput disabled source="id" />  
-            <PasswordInput source="hashedPassword" label="Пароль (оставьте это поле пустым, если не хотите менять пароль)" fullWidth={true} />
+            <TextInput disabled source="id" />
+            {  
+            (localStorage.getItem('username') === props.id)
+                 ?
+                <PasswordInput source="hashedPassword" label="Пароль (оставьте это поле пустым, если не хотите менять пароль)" fullWidth={true} disabled /> : 
+                <PasswordInput source="hashedPassword" label="Пароль (оставьте это поле пустым, если не хотите менять пароль)" fullWidth={true} />
+            }
             {
-                (localStorage.getItem('username') == props.id)
+                (localStorage.getItem('username') === props.id)
                  ?
                 <BooleanInput source="canEditUsers" label="Права администратора" validate={[required()]} disabled /> : 
                 <BooleanInput source="canEditUsers" label="Права администратора" validate={[required()]} />
