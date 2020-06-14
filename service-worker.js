@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/DimplomFrontend/precache-manifest.10ea7a0d15559b9d0e1e14f32c3a927a.js"
+  "/DimplomFrontend/precache-manifest.0da0c61b45794b5511b0cc42b4926cd8.js"
 );
 
 self.addEventListener('message', (event) => {

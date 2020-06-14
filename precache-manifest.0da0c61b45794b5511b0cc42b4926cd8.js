@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "325e5b99a0dd305204ebd8308e876077",
+    "revision": "3aa11cb411fad2f3f5e8985f1770e777",
     "url": "/DimplomFrontend/index.html"
   },
   {
