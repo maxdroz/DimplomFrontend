@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DimplomFrontend/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/DimplomFrontend/static/js/main.e647f25e.chunk.js",
+    "main.js.map": "/DimplomFrontend/static/js/main.e647f25e.chunk.js.map",
+    "runtime-main.js": "/DimplomFrontend/static/js/runtime-main.0dc5e95b.js",
+    "runtime-main.js.map": "/DimplomFrontend/static/js/runtime-main.0dc5e95b.js.map",
+    "static/js/2.90fdad09.chunk.js": "/DimplomFrontend/static/js/2.90fdad09.chunk.js",
+    "static/js/2.90fdad09.chunk.js.map": "/DimplomFrontend/static/js/2.90fdad09.chunk.js.map",
+    "index.html": "/DimplomFrontend/index.html",
+    "precache-manifest.10ea7a0d15559b9d0e1e14f32c3a927a.js": "/DimplomFrontend/precache-manifest.10ea7a0d15559b9d0e1e14f32c3a927a.js",
+    "service-worker.js": "/DimplomFrontend/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/DimplomFrontend/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.90fdad09.chunk.js.LICENSE.txt": "/DimplomFrontend/static/js/2.90fdad09.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0dc5e95b.js",
+    "static/js/2.90fdad09.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.e647f25e.chunk.js"
+  ]
+}
